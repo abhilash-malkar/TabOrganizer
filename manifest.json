@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "TabOrganizer",
+    "version": "1.0",
+    "description": "Smart session manager to save, restore, and organize your browser tabs efficiently.",
+    "permissions": [
+      "tabs",
+      "storage"
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+      }
+    },
+    "icons": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+}

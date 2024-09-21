@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tab Manager</title>
+  <link rel="stylesheet" href="./popup.css">
+  <link rel="stylesheet" href="./libraries/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
+      <h3 class="my-3">Tab Manager</h3>
+      <button id="save-session" class="btn btn-dark btn-sm">Save Current Tabs</button>
+    </div>
+    <div id="saved-sessions">
+      <h5>Saved Sessions</h5>
+      <table class="table table-striped" id="session-table">
+        <thead>
+          <tr>
+            <th>Session</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="session-list"></tbody>
+      </table>
+    </div>
+    <!-- Modal for moving/copying tabs -->
+    <div class="modal fade" id="moveTabModal" tabindex="-1" aria-labelledby="moveTabModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="moveTabModalLabel">Move/Copy Tab</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <select id="targetSessionSelect" class="form-select mb-3">
+              <!-- Options will be populated dynamically -->
+            </select>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="copyTabCheckbox">
+              <label class="form-check-label" for="copyTabCheckbox">
+                Copy instead of move
+              </label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="confirmMoveTab">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Confirmation Modal for Deleting Session -->
+    <div class="modal fade" id="deleteSessionModal" tabindex="-1" aria-labelledby="deleteSessionModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteSessionModalLabel">Confirm Delete Session</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Are you sure you want to delete this session?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger" id="confirmDeleteSession">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Confirmation Modal for Deleting Tab -->
+    <div class="modal fade" id="deleteTabModal" tabindex="-1" aria-labelledby="deleteTabModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteTabModalLabel">Confirm Delete Tab</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Are you sure you want to delete this tab?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger" id="confirmDeleteTab">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./libraries/bootstrap.bundle.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

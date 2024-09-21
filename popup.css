@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 10px;
+  width: 600px !important;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+#saved-sessions {
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.session-name {
+  width: 100%;
+  max-width: 200px;
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-group-item span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 60%;
+}
+
+.list-group-item .btn-group {
+  white-space: nowrap;
+}
